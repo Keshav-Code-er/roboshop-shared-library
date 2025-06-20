@@ -1,5 +1,18 @@
 #!groovy
 
 def decidePipeline(Map configMap){
-      echo "I need to take the decision based on the map you sent"
+      application = configMap.get("application")
+      //# here we are getting modeJSVM
+
+      switch(application) {
+      case 'nodeJSVM':
+            nodeJSVMCI(configMap)
+            break
+      case  'JavaVM':
+            javaVMCI(configMap)      
+            break
+      default:
+            error "Unreocgnised application"
+            break
+      }
 }
