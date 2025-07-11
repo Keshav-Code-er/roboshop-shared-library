@@ -6,10 +6,10 @@ def decidePipeline(Map configMap){
 
       switch(application) {
       case 'nodeJSVM':
-            nodeJSVMCI(configMap)
+            NodeJSVMCI(configMap)
             break
       case  'JavaVM':
-            javaVMCI(configMap)      
+            JavaVMCI(configMap)      
             break
       default:
             error "Unreocgnised application"
